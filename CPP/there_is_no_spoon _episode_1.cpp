@@ -24,38 +24,30 @@ int main()
             grid[i][j] = line[j];
     }
     
-     
+     cout << " 0 0 -1 -1 -1 -1";
 
    for (int i = 0; i < height; i++) {
-        
+       int k;
         for (int j = 0; j < width; j++) 
-            if(grid[i][j] != "."){
-            
-            int hasRightNeighbor = 0;
-            int hasBottomNeighbor = 0;
-            
+            if(grid[i][j] == "0"){
             cout << j << " " << i << " ";
-            
-            
-            for(int k = j+1; k < width; k++)
+            for( k = j+1; k < width; k++)
                 if(grid[i][k] == "0"){
                     cout << k << " " << i << " ";
-                    hasRightNeighbor = 1;
                     break;
                 }
-                
-            if(!hasRightNeighbor)
+   
+            if(k == width)
                 cout << "-1 -1 ";
             
             
-            for(int k = i+1; k < height; k++)
+            for( k = i+1; k < height; k++)
                 if(grid[k][j] == "0"){
                     cout << j << " " << k << " ";
-                    hasBottomNeighbor = 1;
                     break;
                 }
                 
-            if(!hasBottomNeighbor)
+            if(k == height)
                 cout << "-1 -1 ";
             
             cout << endl;
