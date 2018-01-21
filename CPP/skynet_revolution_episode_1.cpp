@@ -36,29 +36,24 @@ int main()
     // game loop
     while (1) {
         int SI; // The index of the node on which the Skynet agent is positioned this turn
-        cin >> SI; cin.ignore();
-        
+        cin >> SI; cin.ignore(); 
         severed = 0;
-       
-        for (int i = 0; i < E; i++){
+     
+        for (int i = 0; i < E; i++)
             if( matrix[SI][gatewayNodes[i]] == 1) {
                 matrix[SI][gatewayNodes[i]] = 0;
                 severed = 1;
                 cout << SI << " " << gatewayNodes[i]  << endl;
                 break;
             }
-        }
     
-        if (!severed) { 
+        if (!severed)  
             for (int i = 0; i < E; i++)
                 for (int j = 0; j < N, severed != 1; j++) 
                     if (matrix[gatewayNodes[i]][j] == 1) {
                         matrix[gatewayNodes[i]][j] = 0;
                         cout << gatewayNodes[i] << " " << j << endl;
                         severed = 1;
-                    }
-                
-        }
-
+                    }               
     }
 }
